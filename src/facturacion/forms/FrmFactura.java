@@ -44,7 +44,7 @@ class FrmFactura extends JDialog {
     private void initComponents() {
         getContentPane().setLayout(new BorderLayout(10, 10));
 
-        // Panel para seleccionar cliente
+        
         JPanel panelCliente = new JPanel();
         JLabel lblCliente = new JLabel("Cliente:");
         JComboBox<Cliente> comboClientes = new JComboBox<>(listaClientes.toArray(new Cliente[0]));
@@ -58,12 +58,12 @@ class FrmFactura extends JDialog {
         panelCliente.add(txtCedula);
         panelCliente.add(btnBuscarCliente);
 
-        // Panel para agregar productos
+        
         JPanel panelProductos = new JPanel();
         JLabel lblProducto = new JLabel("Producto:");
         lblProducto.setBounds(10, 21, 72, 14);
         JComboBox<Producto> comboProductos = new JComboBox<>(listaProductos.toArray(new Producto[0]));
-        comboProductos.setBounds(92, 17, 72, 22);
+        comboProductos.setBounds(72, 17, 92, 22);
         JTextField txtCantidad = new JTextField(5);
         txtCantidad.setBounds(507, 15, 46, 20);
         JButton btnAgregarProducto = new JButton("Agregar");
@@ -78,7 +78,7 @@ class FrmFactura extends JDialog {
         panelProductos.add(txtCantidad);
         panelProductos.add(btnAgregarProducto);
 
-        // Tabla para mostrar productos seleccionados
+       
         String[] columnNames = {"Producto", "Cantidad", "Subtotal"};
         table = new JTable(new DefaultTableModel(new Object[0][3], columnNames));
         JScrollPane scrollPane = new JScrollPane(table);
@@ -96,7 +96,7 @@ class FrmFactura extends JDialog {
         getContentPane().add(scrollPane, BorderLayout.SOUTH);
         getContentPane().add(panelBotones, BorderLayout.PAGE_END);
 
-        // Acciones de botones
+        
         btnAgregarProducto.addActionListener(e -> agregarProducto(comboProductos, txtCantidad));
         
         JLabel lblCodigo = new JLabel("Código:");
@@ -116,7 +116,7 @@ class FrmFactura extends JDialog {
         btnbuscarProducto.addActionListener(e -> buscarProducto(txtCodigo, comboProductos));
     }
 
-    // Método para buscar cliente por cédula
+    
     private void buscarCliente(JTextField txtCedula, JComboBox<Cliente> comboClientes) {
         String cedula = txtCedula.getText().trim();
         Cliente clienteEncontrado = listaClientes.stream()

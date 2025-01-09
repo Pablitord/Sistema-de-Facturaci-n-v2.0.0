@@ -57,9 +57,8 @@ public class FrmMenuPrincipal extends JFrame {
                 btnSalir.setFont(new Font("Microsoft Tai Le", Font.BOLD, 17));
                 btnSalir.setBackground(new Color(202, 0, 202));
                 menuBar.add(btnSalir);
-                
-                        // Acción para cerrar la aplicación
-                        btnSalir.addActionListener(e -> System.exit(0));
+                // Acción para cerrar la aplicación
+                btnSalir.addActionListener(e -> System.exit(0));
 
         menuBar.add(menuClientes);
         menuBar.add(menuProductos);
